@@ -1,0 +1,11 @@
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/FagsystemApp.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/domain/AvtaleType.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/repo/KundeRepo.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/service/KundeService.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/service/impl/AvtaleServiceImpl.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/service/AvtaleService.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/domain/Kunde.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/domain/Avtale.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/service/impl/KundeServiceImpl.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/repo/AvtaleRepo.java
+/home/peyman/projects/forsikring/fagsystem/src/main/java/no/shakari/caseoppgave/fagsystem/domain/AvtaleStatus.java

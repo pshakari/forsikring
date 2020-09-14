@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="integrasjon" />
+        <module name="klient" />
+        <module name="brevtjeneste" />
+        <module name="fagsystem" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="brevtjeneste" target="1.8" />
+      <module name="fagsystem" target="1.8" />
+      <module name="forsikring" target="1.8" />
+      <module name="integrasjon" target="1.8" />
+      <module name="klient" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="brevtjeneste" options="-parameters" />
+      <module name="fagsystem" options="-parameters" />
+      <module name="integrasjon" options="-parameters" />
+      <module name="klient" options="-parameters" />
+    </option>
+  </component>
+</project>

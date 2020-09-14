@@ -1,0 +1,11 @@
+no/shakari/caseoppgave/fagsystem/service/KundeService.class
+no/shakari/caseoppgave/fagsystem/FagsystemApp.class
+no/shakari/caseoppgave/fagsystem/domain/AvtaleStatus.class
+no/shakari/caseoppgave/fagsystem/service/AvtaleService.class
+no/shakari/caseoppgave/fagsystem/domain/Kunde.class
+no/shakari/caseoppgave/fagsystem/repo/AvtaleRepo.class
+no/shakari/caseoppgave/fagsystem/domain/Avtale.class
+no/shakari/caseoppgave/fagsystem/domain/AvtaleType.class
+no/shakari/caseoppgave/fagsystem/service/impl/AvtaleServiceImpl.class
+no/shakari/caseoppgave/fagsystem/repo/KundeRepo.class
+no/shakari/caseoppgave/fagsystem/service/impl/KundeServiceImpl.class
