@@ -44,44 +44,47 @@ public class AvtaleController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String opprettAvtale(AvtaleFormVo avtaleForm) throws ExecutionException, InterruptedException {
-        Kunde kundeMappet = Mapper.toKunde(avtaleForm);
-        Avtale avtaleMappet = Mapper.toAvtale(avtaleForm);
+        if(avtaleForm != null) {
+            Kunde kundeMappet = Mapper.toKunde(avtaleForm);
+            Avtale avtaleMappet = Mapper.toAvtale(avtaleForm);
 
-        kundeMappet.getAvtaler().add(avtaleMappet);
-        avtaleMappet.setKunde(kundeMappet);
+            kundeMappet.getAvtaler().add(avtaleMappet);
+            avtaleMappet.setKunde(kundeMappet);
 
-        Future<Kunde> kunde = null;
-        Future<Avtale> avtale = null;
+            Future<Kunde> kunde = null;
+            Future<Avtale> avtale = null;
 
-        try {
-            kunde = opprettKunde(kundeMappet);
-            avtale = lagreAvtale(avtaleMappet);
+            try {
+                kunde = opprettKunde(kundeMappet);
+                avtale = lagreAvtale(avtaleMappet);
 
-            //vent til alt er lagret
-            while (!(kunde.isDone() && avtale.isDone())) {
-                Thread.sleep(20);
-            }
+                //vent til alt er lagret
+                while (!(kunde.isDone() && avtale.isDone())) {
+                    Thread.sleep(20);
+                }
 
-        } catch (InterruptedException e) {
-            LOG.error("Noe gikk galt under oppretting av kunde/avtale: ", e.getMessage());
-            e.printStackTrace();
-        }
-
-
-
-        if(avtale != null && kunde != null) {
-            Brev brev = createBrev(avtale.get(), kunde.get());
-            Brev sendt= brevService.send(brev);
-            if(sendt != null) {
-                avtale.get().setStatus(AvtaleStatus.SENDT);
-                integrasjonService.lagreAvtale(avtale.get());
+            } catch (InterruptedException e) {
+                LOG.error("Noe gikk galt under oppretting av kunde/avtale: ", e.getMessage());
+                e.printStackTrace();
             }
 
 
+
+            if(avtale != null && kunde != null) {
+                Brev brev = createBrev(avtale.get(), kunde.get());
+                Brev sendt= brevService.send(brev);
+                if(sendt != null) {
+                    avtale.get().setStatus(AvtaleStatus.SENDT);
+                    integrasjonService.lagreAvtale(avtale.get());
+                }
+
+
+            }
+
+
+            return "Opprettet avtale: "+avtale.get().getAvtaleId() + " status: "+ avtale.get().getStatus().toString();
         }
-
-
-        return "Opprettet avtale: "+avtale.get().getAvtaleId() + " status: "+ avtale.get().getStatus().toString();
+        return "";
     }
 
     @Async

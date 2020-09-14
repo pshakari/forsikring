@@ -1,6 +1,6 @@
 no/shakari/caseoppgave/integrasjon/service/IntegrasjonService.class
+no/shakari/caseoppgave/integrasjon/IntegrasjonApp.class
 no/shakari/caseoppgave/integrasjon/service/impl/IntegrasjonServiceImpl.class
 no/shakari/caseoppgave/integrasjon/controller/AvtaleController.class
 no/shakari/caseoppgave/integrasjon/vo/AvtaleFormVo.class
-IntegrasjonApp.class
 no/shakari/caseoppgave/integrasjon/mapper/Mapper.class
