@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -16,7 +17,8 @@ public class IntegrasjonServiceTest {
     private IntegrasjonService integrasjonService;
 
     @Before
-    public void setUp() {
+    public void init() {
+        MockitoAnnotations.initMocks(this);
         Kunde kunde = new Kunde();
         kunde.setKundeId(123L);
         when(integrasjonService.opprettKunde(any())).thenReturn(kunde);
